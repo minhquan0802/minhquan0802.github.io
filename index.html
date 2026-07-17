@@ -1,0 +1,1626 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Nguyễn Hồng Minh Quân - Portfolio</title>
+    <script>
+      (function () {
+        var stored = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var isDark = stored ? stored === "dark" : prefersDark;
+        document.documentElement.classList.toggle("dark", isDark);
+      })();
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#a38c6a",
+              outline: "#75777d",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#001a42",
+              "surface-dim": "#d8dadc",
+              "on-surface-variant": "#45474c",
+              "surface-container-highest": "#e0e3e5",
+              "inverse-on-surface": "#eff1f3",
+              "tertiary-fixed": "#fadfb8",
+              "on-error": "#ffffff",
+              "secondary-fixed-dim": "#adc6ff",
+              "on-background": "#191c1e",
+              "on-primary-fixed": "#111c2d",
+              primary: "#091426",
+              tertiary: "#1e1200",
+              "outline-variant": "#c5c6cd",
+              "on-secondary-container": "#fefcff",
+              "on-primary-container": "#8590a6",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#3c475a",
+              "primary-fixed": "#d8e3fb",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#ddc39d",
+              "on-tertiary-fixed": "#271902",
+              "surface-container-high": "#e6e8ea",
+              "surface-tint": "#545f73",
+              "inverse-surface": "#2d3133",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#d8e2ff",
+              "surface-container": "#eceef0",
+              "primary-fixed-dim": "#bcc7de",
+              background: "#f7f9fb",
+              "secondary-container": "#2170e4",
+              "tertiary-container": "#35260c",
+              secondary: "#0058be",
+              "on-secondary-fixed-variant": "#004395",
+              "primary-container": "#1e293b",
+              "on-primary": "#ffffff",
+              error: "#ba1a1a",
+              "inverse-primary": "#bcc7de",
+              "surface-bright": "#f7f9fb",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#564427",
+              surface: "#f7f9fb",
+              "surface-container-low": "#f2f4f6",
+              "on-surface": "#191c1e",
+              "surface-variant": "#e0e3e5",
+              "dark-bg": "#0b0f14",
+              "dark-surface": "#121821",
+              "dark-surface-alt": "#1a212c",
+              "dark-border": "#2a3441",
+              "dark-text": "#e8ecf1",
+              "dark-text-muted": "#9aa7b5",
+              "dark-accent": "#6ea8fe",
+              "dark-tag-bg": "#1c2b4a",
+              "dark-tag-text": "#a9c8ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "section-gap": "80px",
+              "container-max": "1120px",
+              "stack-lg": "32px",
+              gutter: "24px",
+              "stack-md": "16px",
+              "stack-sm": "8px",
+            },
+            fontFamily: {
+              "headline-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "code-sm": ["JetBrains Mono"],
+              "label-md": ["JetBrains Mono"],
+              "headline-md": ["Inter"],
+              "body-lg": ["Inter"],
+              display: ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+            },
+            fontSize: {
+              "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "code-sm": ["13px", { lineHeight: "1.5", fontWeight: "400" }],
+              "label-md": ["14px", { lineHeight: "1.4", fontWeight: "500" }],
+              "headline-md": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              display: ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+              "headline-lg-mobile": ["24px", { lineHeight: "1.2", fontWeight: "700" }],
+            },
+          },
+        },
+      };
+    </script>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container dark:bg-dark-bg dark:text-dark-text"
+  >
+    <!-- TopNavBar -->
+    <header
+      class="w-full sticky top-0 z-50 border-b border-outline-variant dark:border-dark-border bg-surface dark:bg-dark-surface"
+    >
+      <nav class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-16">
+        <div
+          class="font-headline-md text-headline-md text-primary dark:text-dark-text cursor-pointer transition-all hover:text-secondary dark:hover:text-dark-accent"
+        >
+          Nguyễn Hồng Minh Quân
+        </div>
+        <div class="hidden md:flex items-center space-x-6 font-body-md text-body-md">
+          <a
+            class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text border-b-2 border-transparent pb-1 cursor-pointer transition-colors duration-200"
+            data-section="home"
+            href="#home"
+            >Home</a
+          >
+          <a
+            class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text border-b-2 border-transparent pb-1 cursor-pointer transition-colors duration-200"
+            data-section="skills"
+            href="#skills"
+            >Skills</a
+          >
+          <a
+            class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text border-b-2 border-transparent pb-1 cursor-pointer transition-colors duration-200"
+            data-section="projects"
+            href="#projects"
+            >Projects</a
+          >
+          <a
+            class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text border-b-2 border-transparent pb-1 cursor-pointer transition-colors duration-200"
+            data-section="education"
+            href="#education"
+            >Education</a
+          >
+          <a
+            class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text border-b-2 border-transparent pb-1 cursor-pointer transition-colors duration-200"
+            data-section="contact"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            aria-label="Toggle dark mode"
+            class="inline-flex items-center justify-center w-10 h-10 rounded border border-outline-variant dark:border-dark-border text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text hover:border-secondary dark:hover:border-dark-accent transition-colors"
+            id="theme-toggle"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-[20px]" id="theme-toggle-icon">dark_mode</span>
+          </button>
+          <a
+            class="inline-flex items-center px-4 py-2 bg-primary text-on-primary rounded font-label-md text-label-md hover:bg-surface-tint dark:bg-dark-accent dark:text-dark-bg dark:hover:bg-dark-text transition-colors"
+            download=""
+            href="Nguyen_Hong_Minh_Quan_Backend_Developer.pdf"
+          >
+            Resume
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main class="grid-bg min-h-screen pb-section-gap">
+      <!-- Hero Section -->
+      <section class="max-w-container-max mx-auto px-gutter pt-32 pb-section-gap scroll-mt-16" id="home">
+        <div class="max-w-3xl">
+          <div
+            class="inline-flex items-center px-3 py-1 bg-surface-container dark:bg-dark-surface-alt rounded-full border border-outline-variant dark:border-dark-border mb-6"
+          >
+            <span class="w-2 h-2 rounded-full bg-secondary dark:bg-dark-accent mr-2"></span>
+            <span class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted"
+              >Backend Developer</span
+            >
+          </div>
+          <h1 class="font-display text-display text-primary dark:text-dark-text mb-6 tracking-tight">
+            NGUYỄN HỒNG MINH QUÂN
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-dark-text-muted mb-10 leading-relaxed">
+            Final-year IT student with hands-on experience building robust backend architectures in Java (Spring Boot)
+            and deploying via Docker. Focused on creating scalable, maintainable, and high-performance server-side
+            solutions.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              class="inline-flex items-center px-6 py-3 bg-primary text-on-primary rounded font-label-md text-label-md hover:bg-surface-tint dark:bg-dark-accent dark:text-dark-bg dark:hover:bg-dark-text transition-colors"
+              href="mailto:minhquan080204@gmail.com"
+            >
+              <span class="material-symbols-outlined mr-2 text-[20px]">mail</span>
+              Email
+            </a>
+            <a
+              class="inline-flex items-center px-6 py-3 border border-outline dark:border-dark-border bg-surface dark:bg-dark-surface text-on-surface dark:text-dark-text rounded font-label-md text-label-md hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent transition-colors"
+              href="https://www.linkedin.com/in/nguyenhongminhquan/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewbox="0 0 24 24">
+                <path
+                  clip-rule="evenodd"
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+              LinkedIn
+            </a>
+            <a
+              class="inline-flex items-center px-6 py-3 border border-outline dark:border-dark-border bg-surface dark:bg-dark-surface text-on-surface dark:text-dark-text rounded font-label-md text-label-md hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent transition-colors"
+              href="https://github.com/minhquan0802"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewbox="0 0 24 24">
+                <path
+                  clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Technical Skills -->
+      <section class="max-w-container-max mx-auto px-gutter pb-section-gap scroll-mt-16" id="skills">
+        <div class="mb-10">
+          <h2
+            class="font-headline-lg text-headline-lg text-primary dark:text-dark-text md:font-headline-lg md:text-headline-lg font-headline-lg-mobile text-headline-lg-mobile"
+          >
+            Technical Skills
+          </h2>
+          <div class="w-12 h-1 bg-secondary dark:bg-dark-accent mt-4"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+          <!-- Skill Category -->
+          <div
+            class="bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-border p-6 rounded shadow-sm hover:border-secondary dark:hover:border-dark-accent transition-colors duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <div class="w-1 h-6 bg-secondary dark:bg-dark-accent mr-3"></div>
+              <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">Programming Languages</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >Java</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >PHP</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >C#</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >.NET</span
+              >
+            </div>
+          </div>
+          <!-- Skill Category -->
+          <div
+            class="bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-border p-6 rounded shadow-sm hover:border-secondary dark:hover:border-dark-accent transition-colors duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <div class="w-1 h-6 bg-secondary dark:bg-dark-accent mr-3"></div>
+              <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">Databases</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >MySQL</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >SQL Server</span
+              >
+            </div>
+          </div>
+          <!-- Skill Category -->
+          <div
+            class="bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-border p-6 rounded shadow-sm hover:border-secondary dark:hover:border-dark-accent transition-colors duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <div class="w-1 h-6 bg-secondary dark:bg-dark-accent mr-3"></div>
+              <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">Frameworks / Libraries</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >Spring Boot</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >JPA</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >Spring Security</span
+              >
+            </div>
+          </div>
+          <!-- Skill Category -->
+          <div
+            class="bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-border p-6 rounded shadow-sm hover:border-secondary dark:hover:border-dark-accent transition-colors duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <div class="w-1 h-6 bg-secondary dark:bg-dark-accent mr-3"></div>
+              <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">Tools</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >Git</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >GitHub</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >Postman</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >Docker</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Projects -->
+      <section class="max-w-container-max mx-auto px-gutter pb-section-gap scroll-mt-16" id="projects">
+        <div class="mb-10">
+          <h2
+            class="font-headline-lg text-headline-lg text-primary dark:text-dark-text md:font-headline-lg md:text-headline-lg font-headline-lg-mobile text-headline-lg-mobile"
+          >
+            Projects
+          </h2>
+          <div class="w-12 h-1 bg-secondary dark:bg-dark-accent mt-4"></div>
+        </div>
+        <div class="flex flex-col gap-stack-lg">
+          <!-- Project 1 -->
+          <div
+            class="flex flex-col bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-border rounded overflow-hidden shadow-sm hover:border-secondary dark:hover:border-dark-accent hover:shadow-md transition-all duration-300"
+          >
+            <div
+              class="order-1 bg-surface-container dark:bg-dark-surface-alt p-5 flex flex-col items-center gap-4 border-b border-surface-variant dark:border-dark-border"
+              data-view-group
+            >
+              <div class="inline-flex items-center gap-2">
+                <button
+                  class="view-tab bg-secondary dark:bg-dark-accent border-secondary dark:border-dark-accent text-white dark:text-dark-bg px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-view-target="demo-social"
+                  type="button"
+                >
+                  Demo
+                </button>
+                <button
+                  class="view-tab bg-transparent border-outline-variant dark:border-dark-border text-on-surface-variant dark:text-dark-text-muted hover:border-secondary dark:hover:border-dark-accent px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-view-target="diagram-social"
+                  type="button"
+                >
+                  Diagram
+                </button>
+              </div>
+              <div class="view-panel w-full flex flex-col items-center gap-3" data-view="demo-social">
+                <div
+                  class="relative w-full rounded overflow-hidden border border-surface-variant dark:border-dark-border"
+                  data-gallery
+                >
+                  <img
+                    alt="Social Media Platform - màn hình đăng nhập"
+                    class="gallery-slide w-full h-auto"
+                    src="images/giao_dien_social_media.png"
+                  />
+                </div>
+              </div>
+              <div class="view-panel hidden w-full flex flex-col items-center gap-3" data-view="diagram-social">
+                <svg class="w-full h-auto max-w-md" viewbox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <marker id="arrow-social" markerHeight="7" markerWidth="7" orient="auto" refX="6" refY="3.5">
+                      <path class="fill-outline dark:fill-dark-text-muted" d="M0,0 L7,3.5 L0,7 Z"></path>
+                    </marker>
+                  </defs>
+                  <circle class="fill-outline dark:fill-dark-text-muted" cx="300" cy="12" r="9"></circle>
+                  <path class="fill-outline dark:fill-dark-text-muted" d="M280,30 a20,14 0 0 1 40,0 Z"></path>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="700"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="300"
+                    y="55"
+                  >
+                    NGƯỜI DÙNG / CLIENT
+                  </text>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M270,60 L150,73"
+                    fill="none"
+                    marker-end="url(#arrow-social)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M330,60 L450,73"
+                    fill="none"
+                    marker-end="url(#arrow-social)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M300,62 L300,168"
+                    fill="none"
+                    marker-end="url(#arrow-social)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M300,222 L300,269"
+                    fill="none"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M205,269 L393,269"
+                    fill="none"
+                    marker-end="url(#arrow-social)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M393,282 L205,282"
+                    fill="none"
+                    marker-end="url(#arrow-social)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M500,133 L500,248"
+                    fill="none"
+                    marker-end="url(#arrow-social)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M110,312 L110,343"
+                    fill="none"
+                    marker-end="url(#arrow-social)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M490,312 L490,343"
+                    fill="none"
+                    marker-end="url(#arrow-social)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M490,395 L490,428"
+                    fill="none"
+                    marker-end="url(#arrow-social)"
+                    stroke-width="1.75"
+                  ></path>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="195"
+                    y="55"
+                  >
+                    REST
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="405"
+                    y="55"
+                  >
+                    REST
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="300"
+                    y="255"
+                  >
+                    Proxy / Forward
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="548"
+                    y="190"
+                  >
+                    Websocket
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="58"
+                    rx="8"
+                    width="170"
+                    x="15"
+                    y="75"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="100"
+                    y="100"
+                  >
+                    Vue.js App
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="100"
+                    y="116"
+                  >
+                    (Main Social)
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="58"
+                    rx="8"
+                    width="170"
+                    x="415"
+                    y="75"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="500"
+                    y="100"
+                  >
+                    React.js App
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="500"
+                    y="116"
+                  >
+                    (Chat Client)
+                  </text>
+                  <rect
+                    class="fill-secondary-fixed-dim dark:fill-dark-tag-bg stroke-secondary dark:stroke-dark-accent"
+                    height="52"
+                    rx="8"
+                    stroke-width="2"
+                    width="190"
+                    x="205"
+                    y="170"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="300"
+                    y="192"
+                  >
+                    API Gateway
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="300"
+                    y="208"
+                  >
+                    (Routing)
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="62"
+                    rx="8"
+                    width="190"
+                    x="15"
+                    y="250"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="110"
+                    y="276"
+                  >
+                    Spring Backend
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="110"
+                    y="292"
+                  >
+                    (Social Core)
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="62"
+                    rx="8"
+                    width="190"
+                    x="395"
+                    y="250"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="490"
+                    y="276"
+                  >
+                    Express Backend
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="490"
+                    y="292"
+                  >
+                    (Chat Service)
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="50"
+                    rx="8"
+                    width="190"
+                    x="15"
+                    y="345"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="110"
+                    y="367"
+                  >
+                    MySQL
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="110"
+                    y="383"
+                  >
+                    (Social Core)
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="50"
+                    rx="8"
+                    width="190"
+                    x="395"
+                    y="345"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="490"
+                    y="367"
+                  >
+                    MySQL
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="490"
+                    y="383"
+                  >
+                    (Chat Service)
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="60"
+                    rx="8"
+                    width="190"
+                    x="395"
+                    y="430"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="490"
+                    y="454"
+                  >
+                    Redis Cache
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="8.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="490"
+                    y="470"
+                  >
+                    users · friendships
+                  </text>
+                </svg>
+                <p class="text-[11px] font-label-md text-on-surface-variant dark:text-dark-text-muted text-center">
+                  Deployed on Render via Docker
+                </p>
+              </div>
+            </div>
+            <div class="order-2 p-6 flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">
+                  Social Media Platform
+                </h3>
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted bg-surface-container dark:bg-dark-surface-alt px-2 py-1 rounded shrink-0 ml-3"
+                  >Feb 2026 - Apr 2026</span
+                >
+              </div>
+              <div class="space-y-4 mb-6 flex-grow">
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    >Problem</span
+                  >
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                    A 4-person team needed a social backend that could handle posts, follows, and chat without client
+                    polling draining performance, while keeping messaging decoupled from the core API.
+                  </p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    >Approach</span
+                  >
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                    Built JWT-authenticated REST APIs for posts, likes, and follows; pushed activity updates with
+                    Server-Sent Events instead of polling; sped up the friend-request/auto-follow flow with composite
+                    indexes; and wrote a custom reverse proxy inside Spring Boot to route chat traffic to a separate
+                    Node.js service, propagating auth headers between the two.
+                  </p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    >Result</span
+                  >
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                    A working platform with a live web demo and a separate real-time chat client, deployed on Render via
+                    Docker as the backend developer on a 4-person team.
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >SpringBoot</span
+                >
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >MySQL</span
+                >
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >Docker</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-2 pt-4 border-t border-surface-variant dark:border-dark-border">
+                <a
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline dark:border-dark-border bg-surface-container-lowest dark:bg-dark-surface-alt text-on-surface dark:text-dark-text font-label-md text-label-md rounded hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent hover:bg-surface-container dark:hover:bg-dark-surface transition-colors"
+                  href="https://github.com/dainji04/LVTN-Management"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <svg aria-hidden="true" class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                  GitHub
+                </a>
+                <a
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline dark:border-dark-border bg-surface-container-lowest dark:bg-dark-surface-alt text-on-surface dark:text-dark-text font-label-md text-label-md rounded hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent hover:bg-surface-container dark:hover:bg-dark-surface transition-colors"
+                  href="https://social.dainji.id.vn/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span class="material-symbols-outlined text-[18px]">language</span>
+                  Live demo
+                </a>
+                <a
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline dark:border-dark-border bg-surface-container-lowest dark:bg-dark-surface-alt text-on-surface dark:text-dark-text font-label-md text-label-md rounded hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent hover:bg-surface-container dark:hover:bg-dark-surface transition-colors"
+                  href="https://lvtn-management.vercel.app/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span class="material-symbols-outlined text-[18px]">chat</span>
+                  Chat client
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div
+            class="flex flex-col bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-border rounded overflow-hidden shadow-sm hover:border-secondary dark:hover:border-dark-accent hover:shadow-md transition-all duration-300"
+          >
+            <div class="order-2 p-6 flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">
+                  Fish Store Management Website
+                </h3>
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted bg-surface-container dark:bg-dark-surface-alt px-2 py-1 rounded shrink-0 ml-3"
+                  >May 2026 - July 2026</span
+                >
+              </div>
+              <div class="space-y-4 mb-6 flex-grow">
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    >Problem</span
+                  >
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                    A retail business selling to both wholesale (B2B) and retail (B2C) customers needed one system for
+                    inventory, orders, and staff access — with rules like batch expiry, unit conversion, and time-based
+                    pricing too specific for an off-the-shelf e-commerce platform.
+                  </p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    >Approach</span
+                  >
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                    Built the backend end-to-end with Spring Boot and MySQL: JWT-based RBAC for Admin/Staff/Customer
+                    roles, FIFO batch tracking with dynamic unit conversion and perishable-goods handling, scheduled
+                    jobs plus SSE to alert staff about expiring stock, a credit/debt ledger for wholesale customers, and
+                    VNPAY for online payment.
+                  </p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    >Result</span
+                  >
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                    A full-stack solution (Spring Boot + ReactJS + MySQL) that automatically adjusts order fulfillment
+                    when stock runs short instead of failing silently.
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >SpringBoot</span
+                >
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >ReactJS</span
+                >
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >MySQL</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-2 pt-4 border-t border-surface-variant dark:border-dark-border">
+                <a
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline dark:border-dark-border bg-surface-container-lowest dark:bg-dark-surface-alt text-on-surface dark:text-dark-text font-label-md text-label-md rounded hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent hover:bg-surface-container dark:hover:bg-dark-surface transition-colors"
+                  href="https://github.com/minhquan0802/QuanLyVuaCa"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <svg aria-hidden="true" class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+            <div
+              class="order-1 bg-surface-container dark:bg-dark-surface-alt p-5 flex flex-col items-center gap-4 border-b border-surface-variant dark:border-dark-border"
+              data-view-group
+            >
+              <div class="inline-flex items-center gap-2">
+                <button
+                  class="view-tab bg-secondary dark:bg-dark-accent border-secondary dark:border-dark-accent text-white dark:text-dark-bg px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-view-target="demo-fish"
+                  type="button"
+                >
+                  Demo
+                </button>
+                <button
+                  class="view-tab bg-transparent border-outline-variant dark:border-dark-border text-on-surface-variant dark:text-dark-text-muted hover:border-secondary dark:hover:border-dark-accent px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-view-target="diagram-fish"
+                  type="button"
+                >
+                  Diagram
+                </button>
+              </div>
+              <div class="view-panel w-full flex flex-col items-center gap-3" data-view="demo-fish">
+                <div
+                  class="relative w-full rounded overflow-hidden border border-surface-variant dark:border-dark-border"
+                  data-gallery
+                >
+                  <img
+                    alt="Fish Store Management - trang chủ sản phẩm"
+                    class="gallery-slide w-full h-auto"
+                    src="images/Quan_ly_vua_ca_trangchu.png"
+                  />
+                  <img
+                    alt="Fish Store Management - trang quản lý đơn hàng admin"
+                    class="gallery-slide w-full h-auto hidden"
+                    src="images/Quan_ly_vua_ca_admin.png"
+                  />
+                  <button
+                    class="gallery-prev absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/50 text-white flex items-center justify-center"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                  </button>
+                  <button
+                    class="gallery-next absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/50 text-white flex items-center justify-center"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                  </button>
+                  <div class="absolute bottom-2 left-0 right-0 flex items-center justify-center gap-1.5">
+                    <button
+                      class="gallery-dot bg-secondary dark:bg-dark-accent w-2 h-2 rounded-full"
+                      type="button"
+                    ></button>
+                    <button
+                      class="gallery-dot bg-outline-variant dark:bg-dark-border w-2 h-2 rounded-full"
+                      type="button"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="view-panel hidden w-full flex flex-col items-center gap-3" data-view="diagram-fish">
+                <svg class="w-full h-auto max-w-md" viewbox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <marker id="arrow-fish" markerHeight="7" markerWidth="7" orient="auto" refX="6" refY="3.5">
+                      <path class="fill-outline dark:fill-dark-text-muted" d="M0,0 L7,3.5 L0,7 Z"></path>
+                    </marker>
+                  </defs>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M200,78 L200,113"
+                    fill="none"
+                    marker-end="url(#arrow-fish)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M150,179 L100,223"
+                    fill="none"
+                    marker-end="url(#arrow-fish)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M250,179 L300,223"
+                    fill="none"
+                    marker-end="url(#arrow-fish)"
+                    stroke-width="1.75"
+                  ></path>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="50"
+                    rx="8"
+                    width="150"
+                    x="125"
+                    y="15"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="38"
+                  >
+                    ReactJS Client
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="54"
+                  >
+                    Admin · Staff · Customer
+                  </text>
+                  <rect
+                    class="fill-secondary-fixed-dim dark:fill-dark-tag-bg stroke-secondary dark:stroke-dark-accent"
+                    height="64"
+                    rx="8"
+                    stroke-width="2"
+                    width="180"
+                    x="110"
+                    y="115"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="142"
+                  >
+                    Spring Boot API
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="160"
+                  >
+                    Inventory · Orders · FIFO
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="50"
+                    rx="8"
+                    width="150"
+                    x="20"
+                    y="225"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="95"
+                    y="255"
+                  >
+                    MySQL
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="50"
+                    rx="8"
+                    width="150"
+                    x="230"
+                    y="225"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="11"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="305"
+                    y="255"
+                  >
+                    VNPAY Gateway
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="145"
+                    y="99"
+                  >
+                    JWT · RBAC
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="98"
+                    y="207"
+                  >
+                    JPA
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="300"
+                    y="207"
+                  >
+                    payment
+                  </text>
+                </svg>
+                <p class="text-[11px] font-label-md text-on-surface-variant dark:text-dark-text-muted text-center">
+                  Backend built with Spring Boot &amp; MySQL
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div
+            class="flex flex-col bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-border rounded overflow-hidden shadow-sm hover:border-secondary dark:hover:border-dark-accent hover:shadow-md transition-all duration-300"
+          >
+            <div
+              class="order-1 bg-surface-container dark:bg-dark-surface-alt p-5 flex flex-col items-center gap-4 border-b border-surface-variant dark:border-dark-border"
+              data-view-group
+            >
+              <div class="inline-flex items-center gap-2">
+                <button
+                  class="view-tab bg-secondary dark:bg-dark-accent border-secondary dark:border-dark-accent text-white dark:text-dark-bg px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-view-target="demo-posture"
+                  type="button"
+                >
+                  Demo
+                </button>
+                <button
+                  class="view-tab bg-transparent border-outline-variant dark:border-dark-border text-on-surface-variant dark:text-dark-text-muted hover:border-secondary dark:hover:border-dark-accent px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-view-target="diagram-posture"
+                  type="button"
+                >
+                  Diagram
+                </button>
+              </div>
+              <div class="view-panel w-full flex flex-col items-center gap-3" data-view="demo-posture">
+                <div
+                  class="relative w-full rounded overflow-hidden border border-surface-variant dark:border-dark-border"
+                  data-gallery
+                >
+                  <img
+                    alt="Posture Checker - màn hình phát hiện tư thế"
+                    class="gallery-slide w-full h-auto"
+                    src="images/giao_dien_Check_tu_the_2.png"
+                  />
+                  <img
+                    alt="Posture Checker - báo cáo thống kê"
+                    class="gallery-slide w-full h-auto hidden"
+                    src="images/giao_dien_Check_tu_the_.png"
+                  />
+                  <button
+                    class="gallery-prev absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/50 text-white flex items-center justify-center"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                  </button>
+                  <button
+                    class="gallery-next absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/50 text-white flex items-center justify-center"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                  </button>
+                  <div class="absolute bottom-2 left-0 right-0 flex items-center justify-center gap-1.5">
+                    <button
+                      class="gallery-dot bg-secondary dark:bg-dark-accent w-2 h-2 rounded-full"
+                      type="button"
+                    ></button>
+                    <button
+                      class="gallery-dot bg-outline-variant dark:bg-dark-border w-2 h-2 rounded-full"
+                      type="button"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="view-panel hidden w-full flex flex-col items-center gap-3" data-view="diagram-posture">
+                <svg class="w-full h-auto max-w-md" viewbox="0 0 400 340" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <marker id="arrow-posture" markerHeight="7" markerWidth="7" orient="auto" refX="6" refY="3.5">
+                      <path class="fill-outline dark:fill-dark-text-muted" d="M0,0 L7,3.5 L0,7 Z"></path>
+                    </marker>
+                  </defs>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M200,54 L200,88"
+                    fill="none"
+                    marker-end="url(#arrow-posture)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M200,150 L200,188"
+                    fill="none"
+                    marker-end="url(#arrow-posture)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M155,240 L100,278"
+                    fill="none"
+                    marker-end="url(#arrow-posture)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M245,240 L300,278"
+                    fill="none"
+                    marker-end="url(#arrow-posture)"
+                    stroke-width="1.75"
+                  ></path>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="44"
+                    rx="8"
+                    width="150"
+                    x="125"
+                    y="10"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="36"
+                  >
+                    Webcam
+                  </text>
+                  <rect
+                    class="fill-secondary-fixed-dim dark:fill-dark-tag-bg stroke-secondary dark:stroke-dark-accent"
+                    height="60"
+                    rx="8"
+                    stroke-width="2"
+                    width="200"
+                    x="100"
+                    y="90"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="116"
+                  >
+                    MediaPipe Pose
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="134"
+                  >
+                    BlazePose · renderer
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="50"
+                    rx="8"
+                    width="180"
+                    x="110"
+                    y="190"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="11.5"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="220"
+                  >
+                    Electron Main Process
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="48"
+                    rx="8"
+                    width="150"
+                    x="20"
+                    y="278"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="11"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="95"
+                    y="306"
+                  >
+                    SQLite (local)
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="48"
+                    rx="8"
+                    width="150"
+                    x="230"
+                    y="278"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="10.5"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="305"
+                    y="306"
+                  >
+                    Tray + Notify
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="222"
+                    y="75"
+                  >
+                    frames
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="222"
+                    y="174"
+                  >
+                    IPC
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="95"
+                    y="262"
+                  >
+                    write
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="300"
+                    y="262"
+                  >
+                    alert
+                  </text>
+                </svg>
+                <p class="text-[11px] font-label-md text-on-surface-variant dark:text-dark-text-muted text-center">
+                  100% offline Windows desktop app
+                </p>
+              </div>
+            </div>
+            <div class="order-2 p-6 flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">
+                  Posture Checker for Developer
+                </h3>
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted bg-surface-container dark:bg-dark-surface-alt px-2 py-1 rounded shrink-0 ml-3"
+                  >Feb 2026 - May 2026</span
+                >
+              </div>
+              <div class="space-y-4 mb-6 flex-grow">
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    >Problem</span
+                  >
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                    Long coding sessions lead to slouching, and most posture-tracking tools either need a cloud
+                    connection or ignore that everyone's body proportions are different.
+                  </p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    >Approach</span
+                  >
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                    Used Google's MediaPipe Pose Landmarker (BlazePose) to read webcam input locally, added a one-time
+                    calibration step so the model adapts to each user's own sitting posture, and packaged the whole
+                    thing as an offline Electron app with SQLite for local history and a background tray process for
+                    continuous monitoring.
+                  </p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    >Result</span
+                  >
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                    A 100% offline Windows app that escalates from a quiet nudge to sound and system notifications the
+                    longer you stay slouched, with a daily dashboard of incidents and total violation time.
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >ElectronJS</span
+                >
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >MediaPipe</span
+                >
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >SQLite3</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-2 pt-4 border-t border-surface-variant dark:border-dark-border">
+                <a
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline dark:border-dark-border bg-surface-container-lowest dark:bg-dark-surface-alt text-on-surface dark:text-dark-text font-label-md text-label-md rounded hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent hover:bg-surface-container dark:hover:bg-dark-surface transition-colors"
+                  href="https://github.com/minhquan0802/Posture-Checker-for-Developer"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <svg aria-hidden="true" class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                  GitHub
+                </a>
+                <a
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline dark:border-dark-border bg-surface-container-lowest dark:bg-dark-surface-alt text-on-surface dark:text-dark-text font-label-md text-label-md rounded hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent hover:bg-surface-container dark:hover:bg-dark-surface transition-colors"
+                  href="https://github.com/minhquan0802/Posture-Checker-for-Developer/releases"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span class="material-symbols-outlined text-[18px]">download</span>
+                  Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Education & Certificates -->
+      <section class="max-w-container-max mx-auto px-gutter pb-section-gap scroll-mt-16" id="education">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-section-gap lg:gap-stack-lg">
+          <!-- Education -->
+          <div>
+            <div class="mb-8">
+              <h2
+                class="font-headline-lg text-headline-lg text-primary dark:text-dark-text md:font-headline-lg md:text-headline-lg font-headline-lg-mobile text-headline-lg-mobile"
+              >
+                Education
+              </h2>
+              <div class="w-12 h-1 bg-secondary dark:bg-dark-accent mt-4"></div>
+            </div>
+            <div class="relative pl-8 border-l border-surface-variant dark:border-dark-border">
+              <div class="absolute w-3 h-3 bg-secondary dark:bg-dark-accent rounded-full -left-[6.5px] top-1"></div>
+              <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text mb-1">
+                Bachelor of Information Technology
+              </h3>
+              <div class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted mb-2">
+                Saigon Technology University (STU)
+              </div>
+              <p class="font-body-md text-body-md text-on-surface dark:text-dark-text">Major in Software Engineering</p>
+              <p class="font-body-md text-body-md text-on-surface dark:text-dark-text font-semibold mt-2">
+                GPA: 3.1/4.0
+              </p>
+            </div>
+          </div>
+          <!-- Certificates -->
+          <div>
+            <div class="mb-8">
+              <h2
+                class="font-headline-lg text-headline-lg text-primary dark:text-dark-text md:font-headline-lg md:text-headline-lg font-headline-lg-mobile text-headline-lg-mobile"
+              >
+                Certificates
+              </h2>
+              <div class="w-12 h-1 bg-secondary dark:bg-dark-accent mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-md">
+              <div
+                class="bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-border p-6 rounded flex items-center shadow-sm"
+              >
+                <span class="material-symbols-outlined text-[32px] text-secondary dark:text-dark-accent mr-4"
+                  >workspace_premium</span
+                >
+                <div>
+                  <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">TOEIC</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">Score: 620</p>
+                </div>
+              </div>
+              <div
+                class="bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-border p-6 rounded flex items-center shadow-sm"
+              >
+                <span class="material-symbols-outlined text-[32px] text-secondary dark:text-dark-accent mr-4"
+                  >language</span
+                >
+                <div>
+                  <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">JLPT</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">Level: N4</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full py-stack-lg border-t border-outline-variant dark:border-dark-border bg-surface-container dark:bg-dark-surface scroll-mt-16"
+      id="contact"
+    >
+      <div
+        class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-stack-md"
+      >
+        <div
+          class="font-headline-md text-headline-md font-bold text-primary dark:text-dark-text transition-opacity duration-300"
+        >
+          Nguyễn Hồng Minh Quân
+        </div>
+        <div class="flex items-center space-x-6 font-label-md text-label-md">
+          <a
+            class="text-on-surface-variant dark:text-dark-text-muted hover:text-secondary dark:hover:text-dark-accent transition-opacity duration-300"
+            href="https://github.com/minhquan0802"
+            rel="noopener noreferrer"
+            target="_blank"
+            >GitHub</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-dark-text-muted hover:text-secondary dark:hover:text-dark-accent transition-opacity duration-300"
+            href="https://www.linkedin.com/in/nguyenhongminhquan/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-dark-text-muted hover:text-secondary dark:hover:text-dark-accent transition-opacity duration-300"
+            href="mailto:minhquan080204@gmail.com"
+            >Email</a
+          >
+        </div>
+        <div
+          class="font-label-md text-label-md text-on-surface dark:text-dark-text-muted transition-opacity duration-300"
+        >
+          © 2026 Nguyễn Hồng Minh Quân. Built with Precision.
+        </div>
+      </div>
+    </footer>
+    <script defer="" src="script.js"></script>
+  </body>
+</html>
