@@ -147,36 +147,128 @@
         <div class="hidden md:flex items-center space-x-6 font-body-md text-body-md">
           <a
             class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text border-b-2 border-transparent pb-1 cursor-pointer transition-colors duration-200"
+            data-i18n="nav.home"
             data-section="home"
             href="#home"
             >Home</a
           >
           <a
             class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text border-b-2 border-transparent pb-1 cursor-pointer transition-colors duration-200"
+            data-i18n="nav.skills"
             data-section="skills"
             href="#skills"
             >Skills</a
           >
           <a
             class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text border-b-2 border-transparent pb-1 cursor-pointer transition-colors duration-200"
+            data-i18n="nav.projects"
             data-section="projects"
             href="#projects"
             >Projects</a
           >
           <a
             class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text border-b-2 border-transparent pb-1 cursor-pointer transition-colors duration-200"
+            data-i18n="nav.education"
             data-section="education"
             href="#education"
             >Education</a
           >
           <a
             class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text border-b-2 border-transparent pb-1 cursor-pointer transition-colors duration-200"
+            data-i18n="nav.contact"
             data-section="contact"
             href="#contact"
             >Contact</a
           >
         </div>
         <div class="flex items-center gap-3">
+          <div class="relative" id="lang-switcher">
+            <button
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-label="Select language"
+              class="inline-flex items-center gap-1.5 h-10 px-2.5 rounded border border-outline-variant dark:border-dark-border text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text hover:border-secondary dark:hover:border-dark-accent transition-colors"
+              id="lang-switcher-btn"
+              type="button"
+            >
+              <span class="w-5 h-[13px] rounded-[2px] overflow-hidden inline-block shrink-0" id="lang-switcher-flag">
+                <svg class="w-full h-full" viewbox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                  <rect fill="#00247d" height="20" width="30"></rect>
+                  <polygon fill="#fff" points="0,0 3,0 30,18 30,20 27,20 0,2"></polygon>
+                  <polygon fill="#fff" points="27,0 30,0 30,2 3,20 0,20 0,18"></polygon>
+                  <polygon fill="#cf142b" points="0,0 2,0 30,19 30,20 28,20 0,1"></polygon>
+                  <polygon fill="#cf142b" points="28,0 30,0 30,1 2,20 0,20 0,19"></polygon>
+                  <rect fill="#fff" height="20" width="6" x="12"></rect>
+                  <rect fill="#fff" height="6" width="30" y="7"></rect>
+                  <rect fill="#cf142b" height="20" width="3" x="13.5"></rect>
+                  <rect fill="#cf142b" height="3" width="30" y="8.5"></rect>
+                </svg>
+              </span>
+              <span class="font-label-md text-label-md" id="lang-switcher-label">EN</span>
+              <span class="material-symbols-outlined text-[18px]">expand_more</span>
+            </button>
+            <ul
+              class="hidden absolute right-0 mt-1 w-44 py-1 bg-surface dark:bg-dark-surface border border-outline-variant dark:border-dark-border rounded shadow-md overflow-hidden z-50"
+              id="lang-switcher-menu"
+              role="listbox"
+            >
+              <li>
+                <button
+                  class="lang-option w-full flex items-center gap-2.5 px-3 py-2 font-label-md text-label-md text-on-surface dark:text-dark-text hover:bg-surface-container dark:hover:bg-dark-surface-alt transition-colors"
+                  data-lang="en"
+                  type="button"
+                >
+                  <span class="w-5 h-[13px] rounded-[2px] overflow-hidden inline-block shrink-0">
+                    <svg class="w-full h-full" viewbox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#00247d" height="20" width="30"></rect>
+                      <polygon fill="#fff" points="0,0 3,0 30,18 30,20 27,20 0,2"></polygon>
+                      <polygon fill="#fff" points="27,0 30,0 30,2 3,20 0,20 0,18"></polygon>
+                      <polygon fill="#cf142b" points="0,0 2,0 30,19 30,20 28,20 0,1"></polygon>
+                      <polygon fill="#cf142b" points="28,0 30,0 30,1 2,20 0,20 0,19"></polygon>
+                      <rect fill="#fff" height="20" width="6" x="12"></rect>
+                      <rect fill="#fff" height="6" width="30" y="7"></rect>
+                      <rect fill="#cf142b" height="20" width="3" x="13.5"></rect>
+                      <rect fill="#cf142b" height="3" width="30" y="8.5"></rect>
+                    </svg>
+                  </span>
+                  English
+                </button>
+              </li>
+              <li>
+                <button
+                  class="lang-option w-full flex items-center gap-2.5 px-3 py-2 font-label-md text-label-md text-on-surface dark:text-dark-text hover:bg-surface-container dark:hover:bg-dark-surface-alt transition-colors"
+                  data-lang="vi"
+                  type="button"
+                >
+                  <span class="w-5 h-[13px] rounded-[2px] overflow-hidden inline-block shrink-0">
+                    <svg class="w-full h-full" viewbox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#da251d" height="20" width="30"></rect>
+                      <polygon
+                        fill="#ff0"
+                        points="15,4 16.76,9.27 22.5,9.27 17.87,12.73 19.63,18 15,14.55 10.37,18 12.13,12.73 7.5,9.27 13.24,9.27"
+                      ></polygon>
+                    </svg>
+                  </span>
+                  Tiếng Việt
+                </button>
+              </li>
+              <li>
+                <button
+                  class="lang-option w-full flex items-center gap-2.5 px-3 py-2 font-label-md text-label-md text-on-surface dark:text-dark-text hover:bg-surface-container dark:hover:bg-dark-surface-alt transition-colors"
+                  data-lang="ja"
+                  type="button"
+                >
+                  <span class="w-5 h-[13px] rounded-[2px] overflow-hidden inline-block shrink-0">
+                    <svg class="w-full h-full" viewbox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#fff" height="20" width="30"></rect>
+                      <circle cx="15" cy="10" fill="#bc002d" r="6"></circle>
+                    </svg>
+                  </span>
+                  日本語
+                </button>
+              </li>
+            </ul>
+          </div>
           <button
             aria-label="Toggle dark mode"
             class="inline-flex items-center justify-center w-10 h-10 rounded border border-outline-variant dark:border-dark-border text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-dark-text hover:border-secondary dark:hover:border-dark-accent transition-colors"
@@ -187,6 +279,7 @@
           </button>
           <a
             class="inline-flex items-center px-4 py-2 bg-primary text-on-primary rounded font-label-md text-label-md hover:bg-surface-tint dark:bg-dark-accent dark:text-dark-bg dark:hover:bg-dark-text transition-colors"
+            data-i18n="header.resume"
             href="Nguyen_Hong_Minh_Quan_Backend_Developer.pdf"
             rel="noopener noreferrer"
             target="_blank"
@@ -204,14 +297,19 @@
             class="inline-flex items-center px-3 py-1 bg-surface-container dark:bg-dark-surface-alt rounded-full border border-outline-variant dark:border-dark-border mb-6"
           >
             <span class="w-2 h-2 rounded-full bg-secondary dark:bg-dark-accent mr-2"></span>
-            <span class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted"
+            <span
+              class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted"
+              data-i18n="hero.badge"
               >Backend Developer</span
             >
           </div>
           <h1 class="font-display text-display text-primary dark:text-dark-text mb-6 tracking-tight">
             NGUYỄN HỒNG MINH QUÂN
           </h1>
-          <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-dark-text-muted mb-10 leading-relaxed">
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant dark:text-dark-text-muted mb-10 leading-relaxed"
+            data-i18n="hero.tagline"
+          >
             Final-year IT student with hands-on experience building robust backend architectures in Java (Spring Boot)
             and deploying via Docker. Focused on creating scalable, maintainable, and high-performance server-side
             solutions.
@@ -222,7 +320,7 @@
               href="mailto:minhquan080204@gmail.com"
             >
               <span class="material-symbols-outlined mr-2 text-[20px]">mail</span>
-              Email
+              <span data-i18n="hero.cta.email">Email</span>
             </a>
             <a
               class="inline-flex items-center px-6 py-3 border border-outline dark:border-dark-border bg-surface dark:bg-dark-surface text-on-surface dark:text-dark-text rounded font-label-md text-label-md hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent transition-colors"
@@ -237,7 +335,7 @@
                   fill-rule="evenodd"
                 ></path>
               </svg>
-              LinkedIn
+              <span data-i18n="hero.cta.linkedin">LinkedIn</span>
             </a>
             <a
               class="inline-flex items-center px-6 py-3 border border-outline dark:border-dark-border bg-surface dark:bg-dark-surface text-on-surface dark:text-dark-text rounded font-label-md text-label-md hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent transition-colors"
@@ -252,7 +350,7 @@
                   fill-rule="evenodd"
                 ></path>
               </svg>
-              GitHub
+              <span data-i18n="hero.cta.github">GitHub</span>
             </a>
           </div>
         </div>
@@ -262,6 +360,7 @@
         <div class="mb-10">
           <h2
             class="font-headline-lg text-headline-lg text-primary dark:text-dark-text md:font-headline-lg md:text-headline-lg font-headline-lg-mobile text-headline-lg-mobile"
+            data-i18n="skills.heading"
           >
             Technical Skills
           </h2>
@@ -274,7 +373,12 @@
           >
             <div class="flex items-center mb-4">
               <div class="w-1 h-6 bg-secondary dark:bg-dark-accent mr-3"></div>
-              <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">Programming Languages</h3>
+              <h3
+                class="font-headline-md text-headline-md text-primary dark:text-dark-text"
+                data-i18n="skills.cat.languages"
+              >
+                Programming Languages
+              </h3>
             </div>
             <div class="flex flex-wrap gap-2">
               <span
@@ -293,6 +397,10 @@
                 class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
                 >.NET</span
               >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >Python</span
+              >
             </div>
           </div>
           <!-- Skill Category -->
@@ -301,7 +409,12 @@
           >
             <div class="flex items-center mb-4">
               <div class="w-1 h-6 bg-secondary dark:bg-dark-accent mr-3"></div>
-              <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">Databases</h3>
+              <h3
+                class="font-headline-md text-headline-md text-primary dark:text-dark-text"
+                data-i18n="skills.cat.databases"
+              >
+                Databases
+              </h3>
             </div>
             <div class="flex flex-wrap gap-2">
               <span
@@ -320,7 +433,12 @@
           >
             <div class="flex items-center mb-4">
               <div class="w-1 h-6 bg-secondary dark:bg-dark-accent mr-3"></div>
-              <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">Frameworks / Libraries</h3>
+              <h3
+                class="font-headline-md text-headline-md text-primary dark:text-dark-text"
+                data-i18n="skills.cat.frameworks"
+              >
+                Frameworks / Libraries
+              </h3>
             </div>
             <div class="flex flex-wrap gap-2">
               <span
@@ -335,6 +453,14 @@
                 class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
                 >Spring Security</span
               >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >FastAPI</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container dark:bg-dark-surface-alt border border-surface-variant dark:border-dark-border text-on-surface dark:text-dark-text font-label-md text-label-md rounded"
+                >React</span
+              >
             </div>
           </div>
           <!-- Skill Category -->
@@ -343,7 +469,12 @@
           >
             <div class="flex items-center mb-4">
               <div class="w-1 h-6 bg-secondary dark:bg-dark-accent mr-3"></div>
-              <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">Tools</h3>
+              <h3
+                class="font-headline-md text-headline-md text-primary dark:text-dark-text"
+                data-i18n="skills.cat.tools"
+              >
+                Tools
+              </h3>
             </div>
             <div class="flex flex-wrap gap-2">
               <span
@@ -371,6 +502,7 @@
         <div class="mb-10">
           <h2
             class="font-headline-lg text-headline-lg text-primary dark:text-dark-text md:font-headline-lg md:text-headline-lg font-headline-lg-mobile text-headline-lg-mobile"
+            data-i18n="projects.heading"
           >
             Projects
           </h2>
@@ -388,6 +520,7 @@
               <div class="inline-flex items-center gap-2">
                 <button
                   class="view-tab bg-secondary dark:bg-dark-accent border-secondary dark:border-dark-accent text-white dark:text-dark-bg px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-i18n="project.tab.demo"
                   data-view-target="demo-social"
                   type="button"
                 >
@@ -395,6 +528,7 @@
                 </button>
                 <button
                   class="view-tab bg-transparent border-outline-variant dark:border-dark-border text-on-surface-variant dark:text-dark-text-muted hover:border-secondary dark:hover:border-dark-accent px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-i18n="project.tab.diagram"
                   data-view-target="diagram-social"
                   type="button"
                 >
@@ -428,6 +562,7 @@
                     font-weight="700"
                     style="font-family: &quot;JetBrains Mono&quot;, monospace"
                     text-anchor="middle"
+                    data-i18n="project.social.diagram_client"
                     x="300"
                     y="55"
                   >
@@ -776,7 +911,10 @@
                     users · friendships
                   </text>
                 </svg>
-                <p class="text-[11px] font-label-md text-on-surface-variant dark:text-dark-text-muted text-center">
+                <p
+                  class="text-[11px] font-label-md text-on-surface-variant dark:text-dark-text-muted text-center"
+                  data-i18n="project.social.diagram_caption"
+                >
                   Deployed on Render via Docker
                 </p>
               </div>
@@ -788,6 +926,7 @@
                 </h3>
                 <span
                   class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted bg-surface-container dark:bg-dark-surface-alt px-2 py-1 rounded shrink-0 ml-3"
+                  data-i18n="project.social.date"
                   >Feb 2026 - Apr 2026</span
                 >
               </div>
@@ -795,9 +934,13 @@
                 <div>
                   <span
                     class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.problem"
                     >Problem</span
                   >
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.social.problem"
+                  >
                     A 4-person team needed a social backend that could handle posts, follows, and chat without client
                     polling draining performance, while keeping messaging decoupled from the core API.
                   </p>
@@ -805,9 +948,13 @@
                 <div>
                   <span
                     class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.approach"
                     >Approach</span
                   >
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.social.approach"
+                  >
                     Built JWT-authenticated REST APIs for posts, likes, and follows; pushed activity updates with
                     Server-Sent Events instead of polling; sped up the friend-request/auto-follow flow with composite
                     indexes; and wrote a custom reverse proxy inside Spring Boot to route chat traffic to a separate
@@ -817,9 +964,13 @@
                 <div>
                   <span
                     class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.result"
                     >Result</span
                   >
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.social.result"
+                  >
                     A working platform with a live web demo and a separate real-time chat client, deployed on Render via
                     Docker as the backend developer on a 4-person team.
                   </p>
@@ -853,7 +1004,7 @@
                       fill-rule="evenodd"
                     ></path>
                   </svg>
-                  GitHub
+                  <span data-i18n="project.btn.github">GitHub</span>
                 </a>
                 <a
                   class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline dark:border-dark-border bg-surface-container-lowest dark:bg-dark-surface-alt text-on-surface dark:text-dark-text font-label-md text-label-md rounded hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent hover:bg-surface-container dark:hover:bg-dark-surface transition-colors"
@@ -862,7 +1013,7 @@
                   target="_blank"
                 >
                   <span class="material-symbols-outlined text-[18px]">language</span>
-                  Live demo
+                  <span data-i18n="project.btn.live_demo">Live demo</span>
                 </a>
                 <a
                   class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline dark:border-dark-border bg-surface-container-lowest dark:bg-dark-surface-alt text-on-surface dark:text-dark-text font-label-md text-label-md rounded hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent hover:bg-surface-container dark:hover:bg-dark-surface transition-colors"
@@ -871,7 +1022,7 @@
                   target="_blank"
                 >
                   <span class="material-symbols-outlined text-[18px]">chat</span>
-                  Chat client
+                  <span data-i18n="project.btn.chat_client">Chat client</span>
                 </a>
               </div>
             </div>
@@ -887,6 +1038,7 @@
                 </h3>
                 <span
                   class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted bg-surface-container dark:bg-dark-surface-alt px-2 py-1 rounded shrink-0 ml-3"
+                  data-i18n="project.fish.date"
                   >May 2026 - July 2026</span
                 >
               </div>
@@ -894,9 +1046,13 @@
                 <div>
                   <span
                     class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.problem"
                     >Problem</span
                   >
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.fish.problem"
+                  >
                     A retail business selling to both wholesale (B2B) and retail (B2C) customers needed one system for
                     inventory, orders, and staff access — with rules like batch expiry, unit conversion, and time-based
                     pricing too specific for an off-the-shelf e-commerce platform.
@@ -905,9 +1061,13 @@
                 <div>
                   <span
                     class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.approach"
                     >Approach</span
                   >
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.fish.approach"
+                  >
                     Built the backend end-to-end with Spring Boot and MySQL: JWT-based RBAC for Admin/Staff/Customer
                     roles, FIFO batch tracking with dynamic unit conversion and perishable-goods handling, scheduled
                     jobs plus SSE to alert staff about expiring stock, a credit/debt ledger for wholesale customers, and
@@ -917,9 +1077,13 @@
                 <div>
                   <span
                     class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.result"
                     >Result</span
                   >
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.fish.result"
+                  >
                     A full-stack solution (Spring Boot + ReactJS + MySQL) that automatically adjusts order fulfillment
                     when stock runs short instead of failing silently.
                   </p>
@@ -953,7 +1117,7 @@
                       fill-rule="evenodd"
                     ></path>
                   </svg>
-                  GitHub
+                  <span data-i18n="project.btn.github">GitHub</span>
                 </a>
               </div>
             </div>
@@ -964,6 +1128,7 @@
               <div class="inline-flex items-center gap-2">
                 <button
                   class="view-tab bg-secondary dark:bg-dark-accent border-secondary dark:border-dark-accent text-white dark:text-dark-bg px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-i18n="project.tab.demo"
                   data-view-target="demo-fish"
                   type="button"
                 >
@@ -971,6 +1136,7 @@
                 </button>
                 <button
                   class="view-tab bg-transparent border-outline-variant dark:border-dark-border text-on-surface-variant dark:text-dark-text-muted hover:border-secondary dark:hover:border-dark-accent px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-i18n="project.tab.diagram"
                   data-view-target="diagram-fish"
                   type="button"
                 >
@@ -1172,7 +1338,10 @@
                     payment
                   </text>
                 </svg>
-                <p class="text-[11px] font-label-md text-on-surface-variant dark:text-dark-text-muted text-center">
+                <p
+                  class="text-[11px] font-label-md text-on-surface-variant dark:text-dark-text-muted text-center"
+                  data-i18n="project.fish.diagram_caption"
+                >
                   Backend built with Spring Boot &amp; MySQL
                 </p>
               </div>
@@ -1189,6 +1358,355 @@
               <div class="inline-flex items-center gap-2">
                 <button
                   class="view-tab bg-secondary dark:bg-dark-accent border-secondary dark:border-dark-accent text-white dark:text-dark-bg px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-i18n="project.tab.demo"
+                  data-view-target="demo-snake"
+                  type="button"
+                >
+                  Demo
+                </button>
+                <button
+                  class="view-tab bg-transparent border-outline-variant dark:border-dark-border text-on-surface-variant dark:text-dark-text-muted hover:border-secondary dark:hover:border-dark-accent px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-i18n="project.tab.diagram"
+                  data-view-target="diagram-snake"
+                  type="button"
+                >
+                  Diagram
+                </button>
+              </div>
+              <div class="view-panel w-full flex flex-col items-center gap-3" data-view="demo-snake">
+                <div
+                  class="relative w-full rounded overflow-hidden border border-surface-variant dark:border-dark-border"
+                  data-gallery
+                >
+                  <img
+                    alt="Snake Vision - kết quả nhận diện rắn hổ mang chúa"
+                    class="gallery-slide w-full h-auto"
+                    src="images/snake_vision_detect_result.png"
+                  />
+                  <img
+                    alt="Snake Vision - cơ sở dữ liệu 18 loài rắn"
+                    class="gallery-slide w-full h-auto hidden"
+                    src="images/snake_vision_database.png"
+                  />
+                  <button
+                    class="gallery-prev absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/50 text-white flex items-center justify-center"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                  </button>
+                  <button
+                    class="gallery-next absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/50 text-white flex items-center justify-center"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                  </button>
+                  <div class="absolute bottom-2 left-0 right-0 flex items-center justify-center gap-1.5">
+                    <button
+                      class="gallery-dot bg-secondary dark:bg-dark-accent w-2 h-2 rounded-full"
+                      type="button"
+                    ></button>
+                    <button
+                      class="gallery-dot bg-outline-variant dark:bg-dark-border w-2 h-2 rounded-full"
+                      type="button"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="view-panel hidden w-full flex flex-col items-center gap-3" data-view="diagram-snake">
+                <svg class="w-full h-auto max-w-md" viewbox="0 0 400 340" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <marker id="arrow-snake" markerHeight="7" markerWidth="7" orient="auto" refX="6" refY="3.5">
+                      <path class="fill-outline dark:fill-dark-text-muted" d="M0,0 L7,3.5 L0,7 Z"></path>
+                    </marker>
+                  </defs>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M200,54 L200,88"
+                    fill="none"
+                    marker-end="url(#arrow-snake)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M200,150 L200,188"
+                    fill="none"
+                    marker-end="url(#arrow-snake)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M155,240 L100,278"
+                    fill="none"
+                    marker-end="url(#arrow-snake)"
+                    stroke-width="1.75"
+                  ></path>
+                  <path
+                    class="stroke-outline dark:stroke-dark-text-muted"
+                    d="M245,240 L300,278"
+                    fill="none"
+                    marker-end="url(#arrow-snake)"
+                    stroke-width="1.75"
+                  ></path>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="44"
+                    rx="8"
+                    width="150"
+                    x="125"
+                    y="10"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="36"
+                  >
+                    Browser Client
+                  </text>
+                  <rect
+                    class="fill-secondary-fixed-dim dark:fill-dark-tag-bg stroke-secondary dark:stroke-dark-accent"
+                    height="60"
+                    rx="8"
+                    stroke-width="2"
+                    width="200"
+                    x="100"
+                    y="90"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="12"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="116"
+                  >
+                    FastAPI Backend
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="134"
+                  >
+                    REST endpoints · OpenCV
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="50"
+                    rx="8"
+                    width="180"
+                    x="110"
+                    y="190"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="11.5"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="200"
+                    y="220"
+                  >
+                    YOLOv11 Inference
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="48"
+                    rx="8"
+                    width="150"
+                    x="20"
+                    y="278"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="11"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="95"
+                    y="306"
+                  >
+                    SQLite (history)
+                  </text>
+                  <rect
+                    class="fill-surface-container-lowest dark:fill-dark-surface-alt stroke-outline-variant dark:stroke-dark-border"
+                    height="48"
+                    rx="8"
+                    width="150"
+                    x="230"
+                    y="278"
+                  ></rect>
+                  <text
+                    class="fill-on-surface dark:fill-dark-text"
+                    font-size="10.5"
+                    font-weight="600"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="305"
+                    y="306"
+                  >
+                    models/best.pt
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="222"
+                    y="75"
+                  >
+                    photo/video/frame
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="222"
+                    y="174"
+                  >
+                    HTTP
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="95"
+                    y="262"
+                  >
+                    save
+                  </text>
+                  <text
+                    class="fill-on-surface-variant dark:fill-dark-text-muted"
+                    font-size="9.5"
+                    style="font-family: &quot;JetBrains Mono&quot;, monospace"
+                    text-anchor="middle"
+                    x="300"
+                    y="262"
+                  >
+                    load
+                  </text>
+                </svg>
+                <p
+                  class="text-[11px] font-label-md text-on-surface-variant dark:text-dark-text-muted text-center"
+                  data-i18n="project.snake.diagram_caption"
+                >
+                  FastAPI + YOLOv11 backend, SQLite storage
+                </p>
+              </div>
+            </div>
+            <div class="order-2 p-6 flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">Snake Vision</h3>
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted bg-surface-container dark:bg-dark-surface-alt px-2 py-1 rounded shrink-0 ml-3"
+                  data-i18n="project.snake.date"
+                  >May 2026 - Jul 2026</span
+                >
+              </div>
+              <div class="space-y-4 mb-6 flex-grow">
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.problem"
+                    >Problem</span
+                  >
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.snake.problem"
+                  >
+                    Misidentifying a venomous snake in the field can be life-threatening, and most people have no fast
+                    way to check a species, its venom level, or first-aid steps on the spot.
+                  </p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.approach"
+                    >Approach</span
+                  >
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.snake.approach"
+                  >
+                    Collected and labeled a dataset of 18 common snake species, trained a YOLOv11 model on it, and built
+                    a FastAPI backend (OpenCV for image/video processing) that runs inference from a photo, uploaded
+                    video, or live camera feed, then looks up venom level and first-aid info and logs every detection to
+                    SQLite. A plain HTML/JS frontend renders the annotated bounding box with a color-coded danger alert.
+                  </p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.result"
+                    >Result</span
+                  >
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.snake.result"
+                  >
+                    A working detector across 18 species that flags venom level and first-aid steps in real time &mdash;
+                    e.g. 95% confidence identifying a king cobra &mdash; with a searchable species database and full
+                    detection history.
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >FastAPI</span
+                >
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >YOLOv11</span
+                >
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >OpenCV</span
+                >
+                <span
+                  class="font-code-sm text-code-sm text-secondary dark:text-dark-tag-text bg-secondary-fixed-dim dark:bg-dark-tag-bg px-2 py-1 rounded"
+                  >SQLite</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-2 pt-4 border-t border-surface-variant dark:border-dark-border">
+                <a
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline dark:border-dark-border bg-surface-container-lowest dark:bg-dark-surface-alt text-on-surface dark:text-dark-text font-label-md text-label-md rounded hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent hover:bg-surface-container dark:hover:bg-dark-surface transition-colors"
+                  href="https://github.com/minhquan0802/snake-vision"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <svg aria-hidden="true" class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span data-i18n="project.btn.github">GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div
+            class="flex flex-col bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-border rounded overflow-hidden shadow-sm hover:border-secondary dark:hover:border-dark-accent hover:shadow-md transition-all duration-300"
+          >
+            <div
+              class="order-1 bg-surface-container dark:bg-dark-surface-alt p-5 flex flex-col items-center gap-4 border-b border-surface-variant dark:border-dark-border"
+              data-view-group
+            >
+              <div class="inline-flex items-center gap-2">
+                <button
+                  class="view-tab bg-secondary dark:bg-dark-accent border-secondary dark:border-dark-accent text-white dark:text-dark-bg px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-i18n="project.tab.demo"
                   data-view-target="demo-posture"
                   type="button"
                 >
@@ -1196,6 +1714,7 @@
                 </button>
                 <button
                   class="view-tab bg-transparent border-outline-variant dark:border-dark-border text-on-surface-variant dark:text-dark-text-muted hover:border-secondary dark:hover:border-dark-accent px-3 py-1.5 rounded-full border text-[12px] font-label-md transition-colors"
+                  data-i18n="project.tab.diagram"
                   data-view-target="diagram-posture"
                   type="button"
                 >
@@ -1423,7 +1942,10 @@
                     alert
                   </text>
                 </svg>
-                <p class="text-[11px] font-label-md text-on-surface-variant dark:text-dark-text-muted text-center">
+                <p
+                  class="text-[11px] font-label-md text-on-surface-variant dark:text-dark-text-muted text-center"
+                  data-i18n="project.posture.diagram_caption"
+                >
                   100% offline Windows desktop app
                 </p>
               </div>
@@ -1435,6 +1957,7 @@
                 </h3>
                 <span
                   class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted bg-surface-container dark:bg-dark-surface-alt px-2 py-1 rounded shrink-0 ml-3"
+                  data-i18n="project.posture.date"
                   >Feb 2026 - May 2026</span
                 >
               </div>
@@ -1442,9 +1965,13 @@
                 <div>
                   <span
                     class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.problem"
                     >Problem</span
                   >
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.posture.problem"
+                  >
                     Long coding sessions lead to slouching, and most posture-tracking tools either need a cloud
                     connection or ignore that everyone's body proportions are different.
                   </p>
@@ -1452,9 +1979,13 @@
                 <div>
                   <span
                     class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.approach"
                     >Approach</span
                   >
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.posture.approach"
+                  >
                     Used Google's MediaPipe Pose Landmarker (BlazePose) to read webcam input locally, added a one-time
                     calibration step so the model adapts to each user's own sitting posture, and packaged the whole
                     thing as an offline Electron app with SQLite for local history and a background tray process for
@@ -1464,9 +1995,13 @@
                 <div>
                   <span
                     class="inline-block text-[11px] font-label-md tracking-wide uppercase text-secondary dark:text-dark-accent mb-1"
+                    data-i18n="project.label.result"
                     >Result</span
                   >
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="project.posture.result"
+                  >
                     A 100% offline Windows app that escalates from a quiet nudge to sound and system notifications the
                     longer you stay slouched, with a daily dashboard of incidents and total violation time.
                   </p>
@@ -1500,7 +2035,7 @@
                       fill-rule="evenodd"
                     ></path>
                   </svg>
-                  GitHub
+                  <span data-i18n="project.btn.github">GitHub</span>
                 </a>
                 <a
                   class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline dark:border-dark-border bg-surface-container-lowest dark:bg-dark-surface-alt text-on-surface dark:text-dark-text font-label-md text-label-md rounded hover:border-secondary hover:text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent hover:bg-surface-container dark:hover:bg-dark-surface transition-colors"
@@ -1509,7 +2044,7 @@
                   target="_blank"
                 >
                   <span class="material-symbols-outlined text-[18px]">download</span>
-                  Download
+                  <span data-i18n="project.btn.download">Download</span>
                 </a>
               </div>
             </div>
@@ -1524,6 +2059,7 @@
             <div class="mb-8">
               <h2
                 class="font-headline-lg text-headline-lg text-primary dark:text-dark-text md:font-headline-lg md:text-headline-lg font-headline-lg-mobile text-headline-lg-mobile"
+                data-i18n="education.heading"
               >
                 Education
               </h2>
@@ -1531,13 +2067,18 @@
             </div>
             <div class="relative pl-8 border-l border-surface-variant dark:border-dark-border">
               <div class="absolute w-3 h-3 bg-secondary dark:bg-dark-accent rounded-full -left-[6.5px] top-1"></div>
-              <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text mb-1">
+              <h3
+                class="font-headline-md text-headline-md text-primary dark:text-dark-text mb-1"
+                data-i18n="education.degree"
+              >
                 Bachelor of Information Technology
               </h3>
               <div class="font-label-md text-label-md text-on-surface-variant dark:text-dark-text-muted mb-2">
                 Saigon Technology University (STU)
               </div>
-              <p class="font-body-md text-body-md text-on-surface dark:text-dark-text">Major in Software Engineering</p>
+              <p class="font-body-md text-body-md text-on-surface dark:text-dark-text" data-i18n="education.major">
+                Major in Software Engineering
+              </p>
               <p class="font-body-md text-body-md text-on-surface dark:text-dark-text font-semibold mt-2">
                 GPA: 3.1/4.0
               </p>
@@ -1548,6 +2089,7 @@
             <div class="mb-8">
               <h2
                 class="font-headline-lg text-headline-lg text-primary dark:text-dark-text md:font-headline-lg md:text-headline-lg font-headline-lg-mobile text-headline-lg-mobile"
+                data-i18n="certificates.heading"
               >
                 Certificates
               </h2>
@@ -1562,7 +2104,12 @@
                 >
                 <div>
                   <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">TOEIC</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">Score: 620</p>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="certificates.toeic_score"
+                  >
+                    Score: 620
+                  </p>
                 </div>
               </div>
               <div
@@ -1573,7 +2120,12 @@
                 >
                 <div>
                   <h3 class="font-headline-md text-headline-md text-primary dark:text-dark-text">JLPT</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">Level: N4</p>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted"
+                    data-i18n="certificates.jlpt_level"
+                  >
+                    Level: N4
+                  </p>
                 </div>
               </div>
             </div>
@@ -1597,6 +2149,7 @@
         <div class="flex items-center space-x-6 font-label-md text-label-md">
           <a
             class="text-on-surface-variant dark:text-dark-text-muted hover:text-secondary dark:hover:text-dark-accent transition-opacity duration-300"
+            data-i18n="footer.github"
             href="https://github.com/minhquan0802"
             rel="noopener noreferrer"
             target="_blank"
@@ -1604,6 +2157,7 @@
           >
           <a
             class="text-on-surface-variant dark:text-dark-text-muted hover:text-secondary dark:hover:text-dark-accent transition-opacity duration-300"
+            data-i18n="footer.linkedin"
             href="https://www.linkedin.com/in/nguyenhongminhquan/"
             rel="noopener noreferrer"
             target="_blank"
@@ -1611,17 +2165,24 @@
           >
           <a
             class="text-on-surface-variant dark:text-dark-text-muted hover:text-secondary dark:hover:text-dark-accent transition-opacity duration-300"
+            data-i18n="footer.email"
             href="mailto:minhquan080204@gmail.com"
             >Email</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-dark-text-muted hover:text-secondary dark:hover:text-dark-accent transition-opacity duration-300"
+            href="tel:+84931334967"
+            >0931 334 967</a
           >
         </div>
         <div
           class="font-label-md text-label-md text-on-surface dark:text-dark-text-muted transition-opacity duration-300"
         >
-          © 2026 Nguyễn Hồng Minh Quân. Built with Precision.
+          © 2026 Nguyễn Hồng Minh Quân.
         </div>
       </div>
     </footer>
+    <script defer="" src="translations.js"></script>
     <script defer="" src="script.js"></script>
   </body>
 </html>

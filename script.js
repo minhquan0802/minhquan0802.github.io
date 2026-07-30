@@ -1,3 +1,62 @@
+const LANG_KEY = "lang";
+const LANG_LABELS = { en: "EN", vi: "VI", ja: "JA" };
+const langSwitcherBtn = document.getElementById("lang-switcher-btn");
+const langSwitcherMenu = document.getElementById("lang-switcher-menu");
+const langSwitcherFlag = document.getElementById("lang-switcher-flag");
+const langSwitcherLabel = document.getElementById("lang-switcher-label");
+const langOptions = document.querySelectorAll(".lang-option");
+
+const applyTranslations = (lang) => {
+  const dict = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const value = el.dataset.i18n.split(".").reduce((obj, key) => obj?.[key], dict);
+    if (value !== undefined) el.textContent = value;
+  });
+};
+
+const setLang = (lang) => {
+  const option = document.querySelector(`.lang-option[data-lang="${lang}"]`);
+  if (langSwitcherFlag && option) langSwitcherFlag.innerHTML = option.querySelector("svg").outerHTML;
+  if (langSwitcherLabel) langSwitcherLabel.textContent = LANG_LABELS[lang] || "EN";
+  applyTranslations(lang);
+};
+
+const initLang = () => {
+  const stored = localStorage.getItem(LANG_KEY);
+  const lang = stored && TRANSLATIONS[stored] ? stored : "en";
+  setLang(lang);
+};
+
+const closeLangMenu = () => {
+  langSwitcherMenu?.classList.add("hidden");
+  langSwitcherBtn?.setAttribute("aria-expanded", "false");
+};
+
+langSwitcherBtn?.addEventListener("click", () => {
+  const isHidden = langSwitcherMenu.classList.toggle("hidden");
+  langSwitcherBtn.setAttribute("aria-expanded", String(!isHidden));
+});
+
+langOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    const lang = option.dataset.lang;
+    localStorage.setItem(LANG_KEY, lang);
+    setLang(lang);
+    closeLangMenu();
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!document.getElementById("lang-switcher")?.contains(event.target)) closeLangMenu();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeLangMenu();
+});
+
+initLang();
+
 const navLinks = document.querySelectorAll(".nav-link");
 const sections = Array.from(navLinks)
   .map((link) => document.getElementById(link.dataset.section))
